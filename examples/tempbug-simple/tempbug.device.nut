@@ -54,12 +54,12 @@ class thermistor {
 
     // read thermistor in Celsius
     function readC() {
-        return this.read() - 273.15;
+        return this.readK() - 273.15;
     }
 
     // read thermistor in Fahrenheit
     function readF() {
-        return ((this.read() - 273.15) * 9.0 / 5.0 + 32.0);
+        return ((this.readK() - 273.15) * 9.0 / 5.0 + 32.0);
     }
 }
 
