@@ -14,7 +14,7 @@ const r_therm = 10000;
 const INTERVAL = 900; // interval between wake-and-reads in seconds (15 minutes)
 
 /* CLASS AND GLOBAL FUNCTION DEFINITIONS -------------------------------------*/
-class thermistor {
+class Thermistor {
     _beta = null;
     _t0 = null;
 
@@ -89,7 +89,7 @@ temp_sns <- hardware.pin7;
 
 // instantiate our thermistor class
 // this shows the thermistor on the bottom of the divider
-myThermistor <- thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
+myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
 
 // this function will schedule itself to re-run after it is first called
 // just call it once to start the loop.

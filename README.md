@@ -38,7 +38,7 @@ const t0_therm = 298.15;
 temp_sns <- hardware.pin9;
 
 // thermistor on bottom of divider
-myThermistor <- thermistor(temp_sns, b_therm, t0_therm, 10, false);
+myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, 10, false);
 ```
 
 ## Reading a thermistor

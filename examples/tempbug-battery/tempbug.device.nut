@@ -13,7 +13,7 @@ const r_therm = 100000.0;
 const WAKEINTERVAL_MIN = 15; // interval between wake-and-reads in minutes
 
 /* CLASS AND GLOBAL FUNCTION DEFINITIONS -------------------------------------*/
-class thermistor {
+class Thermistor {
     _beta = null;
     _t0 = null;
 
@@ -76,7 +76,7 @@ temp_sns <- hardware.pin9;
 // instantiate sensor classes
 
 // instantiate our thermistor class
-myThermistor <- thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
+myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
 
 therm_en_l.write(0);
 imp.sleep(0.001);

@@ -2,7 +2,7 @@
 // This file is licensed under the MIT License
 // http://opensource.org/licenses/MIT
 
-class thermistor {
+class Thermistor {
     _beta = null;
     _t0 = null;
 
