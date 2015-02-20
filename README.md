@@ -31,7 +31,7 @@ The ß and T0 parameters are all available on the thermistor datasheet:
 
 ## Instantiating a Thermistor
 
-```
+```squirrel
 const b_therm = 3988;
 const t0_therm = 298.15;
 
@@ -44,7 +44,7 @@ myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, 10, false);
 ## Reading a thermistor
 The thermistory object provides 3 methods for reading the temperature - **.readK()**, **.readC()**, and **.readF()** that will return the temperature in Kelvin, Celsius, and Fahrenheit (respectively):
 
-```
+```squirrel
 local kelvin = therm.readK();
 local celsius = therm.readC();
 local fahrenheit = therm.readF();
