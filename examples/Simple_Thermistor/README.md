@@ -1,7 +1,7 @@
 #Tempbug Simple Example
-This example shows how to read a simple NTC thermistor and post the data to [Xively](https://xively.com/) every 15 minutes to be graphed. 
+This example shows how to read a simple NTC thermistor and post the data to [Xively](https://xively.com/) every 15 minutes to be graphed.
 
-No consideration is made in this example for battery life. Please see tempbug-battery.
+No consideration is made in this example for battery life. Please see Battery-Thermistor example for power saving example.
 
 ##Hardware Configuration
 

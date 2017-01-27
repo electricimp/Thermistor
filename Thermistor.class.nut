@@ -1,8 +1,11 @@
-// Copyright (c) 2015 Electric Imp
+// Copyright (c) 2017 Electric Imp
 // This file is licensed under the MIT License
 // http://opensource.org/licenses/MIT
 
 class Thermistor {
+
+    static VERSION = "2.0.0";
+
     _beta = null;
     _t0 = null;
 
@@ -11,18 +14,29 @@ class Thermistor {
 
     _highSide = null;
 
-    constructor(pin, b, t0, points = 10, highSide = true) {
+    constructor(pin, b, t0, points = 10.0, highSide = true) {
         _pin = pin;
         _pin.configure(ANALOG_IN);
-        _highSide = highSide;
+
+        if (typeof points == "boolean") {
+            _pointsPerRead = 10.0;
+            _highSide = points;
+        } else {
+            _pointsPerRead = points * 1.0;
+            _highSide = highSide;
+        }
 
         _beta = b * 1.0;
         _t0 = t0 * 1.0;
-        _pointsPerRead = points * 1.0;
+    }
+
+    // read thermistor in Celsius
+    function read() {
+        return (readK() - 273.15);
     }
 
     // read thermistor in Kelvin
-    function readK() {
+    function readK(cb = null) {
         local vrat_raw = 0;
         for (local i = 0; i < _pointsPerRead; i++) {
             vrat_raw += _pin.read();
@@ -38,15 +52,5 @@ class Thermistor {
         }
 
         return (_t0 * _beta) / (_beta - _t0 * ln_therm);
-    }
-
-    // read thermistor in Celsius
-    function readC() {
-        return this.readK() - 273.15;
-    }
-
-    // read thermistor in Fahrenheit
-    function readF() {
-        return ((this.readK() - 273.15) * 9.0 / 5.0 + 32.0);
     }
 }
