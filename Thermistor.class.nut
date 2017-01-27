@@ -14,7 +14,7 @@ class Thermistor {
 
     _highSide = null;
 
-    constructor(pin, b, t0, points = 10.0, highSide = true) {
+    constructor(pin, b, t0, points = 10, highSide = true) {
         _pin = pin;
         _pin.configure(ANALOG_IN);
 
@@ -36,7 +36,7 @@ class Thermistor {
     }
 
     // read thermistor in Kelvin
-    function readK(cb = null) {
+    function readK() {
         local vrat_raw = 0;
         for (local i = 0; i < _pointsPerRead; i++) {
             vrat_raw += _pin.read();
