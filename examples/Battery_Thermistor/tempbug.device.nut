@@ -3,7 +3,7 @@
 // http://opensource.org/licenses/MIT
 
 // Include the Thermistor Library
-#require "Thermistor.class.nut:1.0.0"
+#require "Thermistor.class.nut:2.0.0"
 
 /* GLOBALS and CONSTANTS -----------------------------------------------------*/
 
