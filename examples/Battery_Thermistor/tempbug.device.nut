@@ -12,7 +12,6 @@
 // check your datasheet
 const b_therm = 3988;
 const t0_therm = 298.15;
-const r_therm = 100000.0;
 const WAKEINTERVAL_MIN = 15; // interval between wake-and-reads in minutes
 
 
@@ -27,7 +26,7 @@ therm_en_l.write(1);
 temp_sns <- hardware.pin9;
 
 // instantiate our thermistor class
-myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
+myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, 10, false);
 
 therm_en_l.write(0);
 imp.sleep(0.001);

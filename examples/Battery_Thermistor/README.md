@@ -1,5 +1,5 @@
 #Tempbug Battery Example
-This example shows how to read a simple NTC thermistor and post the data to [Xively](https://xively.com/) every 15 minutes to be graphed.
+This example shows how to read a simple NTC thermistor and post the data to the agent every 15 minutes.
 
 In this example, the resistive divider is between 3.3V and Imp Pin8, which is configured as an open-drain output. This allows the Imp to stop current from flowing through the divider by driving Pin8 high, which allows for very long operation on battery.
 

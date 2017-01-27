@@ -12,7 +12,6 @@
 // check your datasheet
 const b_therm = 3988;
 const t0_therm = 298.15;
-const r_therm = 10000;
 const INTERVAL = 900; // interval between wake-and-reads in seconds (15 minutes)
 
 function getTemp() {
@@ -40,7 +39,7 @@ temp_sns <- hardware.pin7;
 
 // Instantiate our thermistor class
 // This shows the thermistor on the bottom of the divider
-myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, r_therm, 10, false);
+myThermistor <- Thermistor(temp_sns, b_therm, t0_therm, 10, false);
 
 // This function will schedule itself to re-run after it is first called
 // Just call it once to start the loop.
