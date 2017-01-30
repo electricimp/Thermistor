@@ -23,7 +23,7 @@ The Thermistor class takes three to five parameters. Three are required, two are
 | *pin* | Imp pin object capable of ANALOG_IN | Required |
 | *b_therm* | Thermistor ß parameter, from datasheet | Required |
 | *t0_therm* | Thermistor T0 parameter, from datasheet | Required |
-| *points* | number of readings to average when reading the thermistor | Optional, defaults to 10 |
+| *points* | Number of readings to average when reading the thermistor | Optional, defaults to 10 |
 | *high_side_therm* | Set `false` to place thermistor on low side of divider | Optional, defaults to `true` |
 
 The ß and T0 parameters are all available on the thermistor datasheet:
