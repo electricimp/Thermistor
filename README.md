@@ -10,7 +10,7 @@ A resistive divider can be formed with the thermistor on the top or the bottom; 
 
 The resistance of the bias resistor in the voltage divider should be equal to the nominal resistance of the thermistor (the resistance at T0). This simplifies the temperature calculation and allows the largest dynamic range.
 
-The center of the divider must be connected to a pin capable of analog input. On the imp001, any pin can be used as an analog input. On the imp002, imp003 and imp004m, only some pins can be configured this way, so check the [Imp Pin Mux chart](http://electricimp.com/docs/hardware/imp/pinmux/). The imp005 does not support analog input.
+The center of the divider must be connected to a pin capable of analog input. On the imp001, any pin can be used as an analog input. On the imp002, imp003 and imp004m, only some pins can be configured this way, so check the appropriate [Imp Pin Mux chart](http://electricimp.com/docs/hardware/imp/pinmux/). The imp005 does not support analog input.
 
 ## Class Usage
 
@@ -20,7 +20,7 @@ The Thermistor class takes three to five parameters. Three are required, two are
 
 | Parameter Name | Description | Optional/Required |
 |----------------|-------------|-------------------|
-| *pin* | Imp pin object capable of ANALOG_IN | Required |
+| *pin* | Imp pin object capable of analog input | Required |
 | *b_therm* | Thermistor ß parameter, from datasheet | Required |
 | *t0_therm* | Thermistor T0 parameter, from datasheet | Required |
 | *points* | Number of readings to average when reading the thermistor | Optional, defaults to 10 |
@@ -40,7 +40,7 @@ const t0_therm = 298.15;
 pin <- hardware.pinJ;
 
 // Thermistor on bottom of divider
-therm <- Thermistor(pin, b_therm, t0_therm, 10, false)
+therm <- Thermistor(pin, b_therm, t0_therm, 10, false);
 ```
 
 ## Class Methods
