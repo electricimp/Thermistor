@@ -1,4 +1,4 @@
-#Thermistor
+# Thermistor
 
 This class makes it simple for an imp to read an NTC (“Negative Temperature Coefficient”) thermistor and determine the temperature. Thermistors are essentially temperature-dependent resistors. To use as a thermometer, a thermistor is used as half of a resistive divider, where the voltage across the full divider is known. The imp then reads the voltage at the center of the divider to determine the ratio of resistance of the thermistor and the bias resistor (also the nominal resistance of the thermistor), [from which the temperature can be derived](http://en.wikipedia.org/wiki/Thermistor).
 
